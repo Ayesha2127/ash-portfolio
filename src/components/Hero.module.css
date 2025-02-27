@@ -1,0 +1,55 @@
+.gradient-text {
+    background: linear-gradient(to right, #f0f0f0, #708090);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+
+ /* header ka code */
+ .blink {
+    color: green;
+    font-size: 50px;
+    font-weight: 900;
+    animation: blink 0.8s ease infinite;
+  }
+  
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* hero bg colour */
+  .bgGradient {
+    background: linear-gradient(to bottom, #000000, #0A2647);
+    background-attachment: fixed; /* Ensures gradient covers the entire page */
+    margin: 0;
+    min-height: 100vh; /* Ensures gradient covers full viewport height */
+  }
+
+  /* heading animated code */
+  .animatedGradientText {
+    background: linear-gradient(90deg, white, grey, white); /* Define your gradient colors */
+    background-size: 200% 100%; /* Double the width for smooth animation */
+    -webkit-background-clip: text; /* Vendor-prefixed for older browsers */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Vendor-prefixed for older browsers */
+    color: transparent; /* Standard property */
+    animation: gradientAnimation 5s linear infinite; /* Apply the animation */
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 100% 0; /* Start from the right */
+    }
+    100% {
+      background-position: 0 100% ; /* Move to the left */
+    }
+  }

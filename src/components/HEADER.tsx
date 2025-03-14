@@ -3,7 +3,7 @@ import { useState } from "react";
 import { GiHamburgerMenu, GiCrossMark } from "react-icons/gi";
 import Link from "next/link";
 
-import style from "./Hero.module.css";
+
 
 export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -13,27 +13,9 @@ export default function Header() {
   };
 
   return (
-    <nav className="w-full h-full gap-3 bg-[#708090] text-white font-serif flex justify-between items-center px-11 flex-wrap lg:h-20">
-      {/* Logo */}
-      <div>
-        <h1 className="text-3xl font-bold">Ash<span className={style.blink}>.</span></h1>
-      </div>
-
-      {/* Hamburger Menu Icon (Mobile) */}
-      <button className="lg:hidden items-center" onClick={toggleSidebar}>
-        {isSidebarOpen ? (
-          <div className="h-15 w-15">
-            <GiCrossMark size={20} /> {/* Cross Icon */}
-          </div>
-        ) : (
-          <div className="h-15 w-15">
-            <GiHamburgerMenu size={20} /> {/* Hamburger Icon */}
-          </div>
-        )}
-      </button>
-
+    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent text-white font-serif flex justify-center items-center p-4">
       {/* Desktop Navigation */}
-      <ul className="hidden lg:flex gap-7 flex-wrap text-xl">
+      <ul className="hidden lg:flex gap-7 flex-wrap text-xl bg-black bg-opacity-50 rounded-full px-8 py-3">
         <li className="hover:text-gray-300">
           <Link href={"/"}>Home</Link>
         </li>
@@ -51,17 +33,37 @@ export default function Header() {
         </li>
       </ul>
 
+      {/* Hamburger Menu Icon (Mobile) */}
+      <button
+        className="lg:hidden absolute right-4 top-4"
+        onClick={toggleSidebar}
+      >
+        {isSidebarOpen ? null : (
+          <div className="h-15 w-15">
+            <GiHamburgerMenu size={25} /> {/* Hamburger Icon */}
+          </div>
+        )}
+      </button>
+
       {/* Mobile Sidebar */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden transition-opacity duration-300 ${isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={toggleSidebar}
       >
         <div
-          className={`fixed inset-y-0 left-0 w-64 bg-[#708090] text-white p-5 transform transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
+          className={`fixed inset-y-0 left-0 w-64 bg-black bg-opacity-90 text-[#708090] p-5 transform transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
           onClick={(e) => e.stopPropagation()}
         >
+          {/* Cross Icon inside Sidebar */}
+          <button
+            className="absolute right-4 top-4"
+            onClick={toggleSidebar}
+          >
+            <GiCrossMark size={20} /> {/* Cross Icon */}
+          </button>
+
           {/* Mobile Navigation Links */}
-          <ul className="flex flex-col gap-5 text-xl font-bold">
+          <ul className="flex flex-col gap-5 text-xl font-bold mt-10">
             <li className="hover:text-gray-300">
               <Link href={"/"}>Home</Link>
             </li>

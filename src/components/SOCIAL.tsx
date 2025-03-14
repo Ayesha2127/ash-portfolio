@@ -5,7 +5,7 @@ import { LuLinkedin } from "react-icons/lu";
 export default function Social() {
   return (
     <div className="p-2 flex flex-wrap justify-center item center text-center gap-8">
-      <div className="text-[#0A2647]">
+      <div className="text-[#708090]">
         {/* Wrap the icon with a mailto link */}
         <a
           href="mailto:ayeshawaseem2127@gmail.com"
@@ -16,7 +16,7 @@ export default function Social() {
         </a>
       </div>
 
-      <div className="text-[#0A2647]">
+      <div className="text-[#708090]">
         {/* Wrap the icon with a mailto link */}
         <a
           href="https://www.linkedin.com/in/ayesha-waseem-b127532bb/"

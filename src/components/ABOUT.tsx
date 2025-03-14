@@ -5,7 +5,7 @@ export default function About() {
     <div className={`flex w-full justify-center items-center font-serif ${style.bgGradient} min-h-screen text-[#f0f0f0] p-4`}>
       <div className="flex flex-col w-full h-full justify-center items-center max-w-[90%] md:max-w-[80%] lg:max-w-[60%]">
         {/* Heading */}
-        <h1 className={`text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center italic ${style['gradient-text']}`}>
+        <h1 className={`text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center italic ${style['gradient-text']}`}>
           About Me
         </h1>
 

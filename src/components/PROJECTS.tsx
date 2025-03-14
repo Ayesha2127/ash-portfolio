@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion"; // Import motion and Variants from framer-motion
+import { FaArrowTrendUp } from "react-icons/fa6";
+import { motion, Variants } from "framer-motion";
+import { Button } from "@/components/BUTTON"; // Import the custom Button component
 import style from './Hero.module.css';
 
 const projects = [
@@ -44,25 +46,22 @@ const projects = [
 ];
 
 export default function Projects() {
-  // Define the hover animation for the project cards
   const hoverAnimation: Variants = {
     initial: { scale: 1, boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)" },
     hover: {
-      scale: 1.05, // Slightly scale up the card
-      boxShadow: "0px 10px 20px rgba(255, 255, 255, 0.2)", // Add a subtle shadow effect
-      transition: { duration: 0.3, ease: "easeInOut" }, // Smooth transition
+      scale: 1.05,
+      boxShadow: "0px 10px 20px rgba(255, 255, 255, 0.2)",
+      transition: { duration: 0.3, ease: "easeInOut" },
     },
   };
 
   return (
-    <div className={`font-bold font-serif italic w-full md:bg-black text-4xl py-7 ${style.bgGradient} bg-black h-full flex-wrap`}>
-      {/* Centered Heading */}
-      <div className={`text-4xl font-bold ${style['gradient-text']} p-6`}>
+    <div className={`font-serif w-full md:bg-black text-4xl py-7 ${style.bgGradient} bg-black h-full flex-wrap`}>
+      <div className={`text-4xl font-bold ${style['gradient-text']} ml-14 mt-16 p-4`}>
         My Projects
       </div>
 
-      {/* Responsive Grid for Projects */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 px-4 mt-9 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 shadow-2xl gap-10 px-4 mt-9 sm:px-6 lg:px-8">
         {projects.map((project) => (
           <motion.div
             key={project.id}
@@ -71,7 +70,6 @@ export default function Projects() {
             initial="initial"
             whileHover="hover"
           >
-            {/* Project Image (Centered) */}
             <div className="flex justify-start">
               <Image
                 src={project.image}
@@ -82,21 +80,28 @@ export default function Projects() {
               />
             </div>
 
-            {/* Project Title (Start-Aligned) */}
             <h1 className="text-xl font-bold mt-4">
               {project.title}
             </h1>
 
-            {/* Project Description (Start-Aligned) */}
-            <p className="text-base mt-2">
+            <p className="text-sm italic mt-2">
               {project.description}
             </p>
 
-            {/* View Project Button (Start-Aligned) */}
             <Link href={project.link} target={project.target || ""}>
-              <button className="rounded-lg p-2 bg-black text-[#f0f0f0] border border-white text-sm mt-4 self-start">
-                View Project
-              </button>
+              <div className="mb-4 self-start ">
+                <Button
+                  borderRadius="0.5rem"
+                  className="text-sm"
+                  containerClassName="w-32 h-10"
+                  borderClassName="border-white"
+                >
+                  View Project
+                  <span className="text-[#537895] ml-2">
+                  <FaArrowTrendUp size={20} />
+                  </span>
+                </Button>
+              </div>
             </Link>
           </motion.div>
         ))}

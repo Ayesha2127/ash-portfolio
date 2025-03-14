@@ -60,7 +60,7 @@ export default function Services() {
   return (
     <div className={`${style['bgGradient']} flex-wrap p-3 font-serif text-[#f0f0f0]`}>
       {/* Centered Heading */}
-      <div className={`text-4xl italic text-center mr-8 font-bold ${style['gradient-text']} p-6`}>
+      <div className={`text-4xl italic text-center ml-14 mt-24 p-6 font-bold ${style['gradient-text']} `}>
         My Services
       </div>
 

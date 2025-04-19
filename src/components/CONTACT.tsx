@@ -2,8 +2,8 @@ import style from "./Hero.module.css";
 import { Button } from "@/components/BUTTON"
 export default function Contact() {
     return (
-      <section className={`flex w-full justify-center items-center font-serif gap-10 flex-col ${style['bgGradient']} py-6`}>
-        <div className={`text-4xl font-bold italic ${style['gradient-text']} h-full mt-14 p-6`}>
+      <section className={`flex w-full   font-serif gap-10 flex-col ${style['bgGradient']} py-6`}>
+        <div className={`text-4xl italic font-bold font-serif ${style['gradient-text']} ml-14 mt-16 p-4`}>
        Get In Touch
       </div>
       <form className="w-full flex flex-col justify-center items-center">

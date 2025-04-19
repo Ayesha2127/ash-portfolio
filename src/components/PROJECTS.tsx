@@ -57,7 +57,7 @@ export default function Projects() {
 
   return (
     <div className={`font-serif w-full md:bg-black text-4xl py-7 ${style.bgGradient} bg-black h-full flex-wrap`}>
-      <div className={`text-4xl font-bold ${style['gradient-text']} ml-14 mt-16 p-4`}>
+      <div className={`text-4xl italic font-serif font-bold ${style['gradient-text']} ml-14 mt-16 p-4`}>
         My Projects
       </div>
 

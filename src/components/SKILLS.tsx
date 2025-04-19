@@ -16,9 +16,9 @@ const skills = [
 
 export default function HeroSection() {
   return (
-    <div className={`flex flex-col items-center justify-center min-h-screen ${style.bgGradient} text-white`}>
+    <div className={`flex flex-col items-center ${style.bgGradient} text-white`}>
       {/* Heading */}
-      <div className={`text-4xl md:text-5xl italic text-center font-bold ${style['gradient-text']} p-4 md:p-6`}>
+      <div className={`text-4xl italic font-serif font-bold ${style['gradient-text']} ml-14 mt-16 p-4`}>
         My Skills
       </div>
 
